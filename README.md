@@ -1,4 +1,4 @@
-# LonginKP3 - RIT Information Sciences & Technologies Website
+# RIT Information Sciences & Technologies Faculty App Website
 
 ## Project Modernization: .NET 6 to .NET 8
 
