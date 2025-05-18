@@ -1,0 +1,55 @@
+﻿@using LonginKP3.Models
+@model FacultyViewModel
+
+
+
+<section class="d-flex flex-column justify-content-center align-items-center">
+    <h1 class="title display-3 text-white slide-bottom my-5">RIT Faculty</h1>
+    <div id="faculty" class="mb-5">
+        @foreach (var item in Model.faculty)
+        {
+            if (@item.username != null)
+            {
+
+
+                <a class="child" data-bs-toggle="modal" data-bs-target="#@item.username">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <img src="@item.imagePath" alt="@item.name">
+                        <div class="child-text p-3">
+                            <h1 class="subtitle text-white">@item.name</h1>
+                            <h2 class="subtitle text-white">@item.title</h2>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="modal fade" id="@item.username" tabindex="-1" aria-labelledby="@item.username-Label" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="@item.imagePath" alt="@item.name">
+                                <hr width="100%">
+                                <p class="subtitle">Email: @item.email</p>
+                                <p class="subtitle">Phone: @item.phone</p>
+                                <p class="subtitle">Twitter: @item.twitter</p>
+                                <p class="subtitle">Facebook: @item.facebook</p>
+                                <p class="subtitle">Website: @item.website</p>
+                                <hr width="100%">
+                                <p class="subtitle">Interest Area: @item.interestArea</p>
+                                <p class="subtitle">Office: @item.office</p>
+                                <p class="subtitle">Office: @item.tagline</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</section>
+

@@ -1,0 +1,98 @@
+﻿@using LonginKP3.Models
+@model DegreesModel
+
+<section id="degrees" class="hero is-halfheight d-flex flex-column my-5 justify-content-center align-items-center">
+    <div class="container-degrees my-5">
+        <h1 class="title text-white d-flex justify-content-center align-items-center p-3">Undergraduate</h1>
+        <div id="undergraduate" class="columns card-deck">
+            @foreach (var undergraduate in Model.undergraduate)
+            {
+
+
+                <div class="column card" data-bs-toggle="modal" data-bs-target="#@undergraduate.degreeName">
+
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-content">
+                                <p class="title">@undergraduate.title</p>
+                            </div>
+                        </div>
+
+                        <div class="content text-white">
+                            @undergraduate.description
+                        </div>
+                    </div>
+                </div>
+
+                <div id="@undergraduate.degreeName" class="modal fade" tabindex="-1" aria-labelledby="@undergraduate.degreeName-Label" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <p class="modal-title">@undergraduate.title</p>
+                            </div>
+
+                            <div class="modal-body">
+                                <div class="content">Description: @undergraduate.description</div>
+                                @foreach (var item in undergraduate.concentrations)
+                                {
+                                    <div class="content">Concentrations: @item</div>
+                                }
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+
+    <div class="container-degrees my-5">
+        <h1 class="title text-white d-flex justify-content-center align-items-center p-3">Graduate</h1>
+        <div id="graduate" class="columns card-deck">
+            @foreach (var graduate in Model.undergraduate)
+            {
+                <div class="column card" data-bs-toggle="modal" data-bs-target="#@graduate.degreeName">
+
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-content">
+                                <p class="title ">@graduate.title</p>
+                            </div>
+                        </div>
+
+                        <div class="content text-white">
+                            @graduate.description
+                        </div>
+                    </div>
+                </div>
+
+                <div id="@graduate.degreeName" class="modal fade" tabindex="-1" aria-labelledby="@graduate.degreeName-Label" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <p class="modal-title">@graduate.title</p>
+                            </div>
+
+                            <div class="modal-body">
+                                <div class="content">Description: @graduate.description</div>
+                                @foreach (var item in graduate.concentrations)
+                                {
+                                    <div class="content">Concentrations: @item</div>
+                                }
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+
+

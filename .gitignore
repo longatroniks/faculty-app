@@ -1,0 +1,39 @@
+## Ignore build output and user-specific files
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## VS Code and JetBrains Rider settings
+.vscode/
+.idea/
+
+## ASP.NET Core Secrets
+secrets.json
+
+## Mac-specific files
+.DS_Store
+
+## Logs
+*.log
+
+## Dependency directories
+node_modules/
+bower_components/
+
+## Publish output
+publish/
+wwwroot/lib/
+
+## Others
+*.swp
+*.tmp
+*.bak
+*.ncb
+*.cache
+*.log
+*.vspscc
+*.vssscc
+_ReSharper*/

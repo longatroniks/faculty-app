@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Project03</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/jquery.tablebodyscroll.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/LonginKP3.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+</head>
+<body>
+    <!--Moving Background-->
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <main role="main" class="pb-3">
+        <header id="headerHero" class="hero is-fullheight d-flex">
+
+            <div class="hero-head">
+                <nav class="navbar d-flex">
+                    <div class="navbar-brand d-flex align-items-center justify-content-between">
+                        <div>
+                            <a class="navbar-item" asp-area="" asp-controller="Home" asp-action="Index">
+                                <img id="logoSmall"
+                                     src="https://ist.rit.edu/assets/img/logos/idbarSmall.png"
+                                     alt="logo" />
+                                <img id="logoBig"
+                                     src="http://ist.rit.edu/assets/img/logos/idbar.png"
+                                     alt="logo" />
+                            </a>
+                        </div>
+
+                        <div id="sidebar">
+                            <ul>
+                                <li>
+                                    <a asp-area="" asp-controller="Home" asp-action="Degrees">Degrees</a>
+                                </li>
+                                <li>
+                                    <a asp-area="" asp-controller="Home" asp-action="Employment">Employment</a>
+                                </li>
+                                <li>
+                                    <a asp-area="" asp-controller="Home" asp-action="Faculty">Faculty</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="burgerContainer" class="d-flex">
+                            <span id="burger" class="navbar-burger">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div id="navbarMenu" class="d-flex justify-conent-center align-items-center">
+                        <div class="tabs d-flex justify-conent-center align-items-center">
+                            <ul class="d-flex justify-conent-center align-items-center">
+                                <li>
+                                    <a asp-area="" asp-controller="Home" asp-action="Degrees">Degrees</a>
+                                </li>
+                                <li>
+                                    <a asp-area="" asp-controller="Home" asp-action="Employment">Employment</a>
+                                </li>
+                                <li>
+                                    <a asp-area="" asp-controller="Home" asp-action="Faculty">Faculty</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="hero-body is-fullheight d-flex justify-content-center align-items-center">
+                <div class="d-flex text-center flex-column justify-content-center align-items-center has-text-centered">
+                    <h1 class="title text-center">INFORMATION SCIENCES & TECHNOLOGIES AT RIT</h1>
+                    <h2 class="subtitle">Scroll down to navigate</h2>
+                </div>
+                <div class="arrow" href="#about">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </header>
+        <div class="">
+            @RenderBody()
+        </div>
+    </main>
+
+
+    <footer class="text-muted pt-5 pb-5">
+        <div class="d-flex justify-content-center align-items-center">
+            &copy; 2022 - LonginKP3 - <a asp-area="" asp-controller="Home" asp-action="Index">About</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/jquery-tablebodyscroll/dist/jquery.tablebodyscroll.js"></script>
+    <script src="~/lib/jquery/dist/jquery.fadethis.min.js"></script>
+    <script>$(window).fadeThis();</script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

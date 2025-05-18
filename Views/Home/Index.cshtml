@@ -1,0 +1,17 @@
+﻿@using LonginKP3.Models
+@model IndexModel
+
+<section id="aboutSection" class="hero d-flex justify-content-center align-items-center">
+    <div id="about" class="hero-body d-flex flex-column justify-content-center align-items-center">
+        <h1 class="title display-5 text-white pb-3">
+            @Model.title
+        </h1>
+        <div>
+            <h3 class="subtitle text-white pt-4">
+                @Model.description
+            </h3>
+        </div>
+        <blockquote class="text-white w-75">"@Model.quote"<p class="pt-4 pl-4">-@Model.quoteAuthor</p></blockquote>
+    </div>
+
+</section>
