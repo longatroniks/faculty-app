@@ -1,8 +1,8 @@
-# RIT Information Sciences & Technologies Faculty App Website
+# RIT Information Sciences & Technologies Faculty App Website (2022)
 
-## Project Modernization: .NET 6 to .NET 8
+## Project Modernization: 2022 to 2025
 
-This project is currently undergoing modernization from .NET 6 to .NET 8. The application is a web interface for Rochester Institute of Technology's Information Sciences & Technologies department, providing information about degrees, faculty, and employment opportunities.
+This project was made in 2022, and is currently undergoing modernization from .NET 6 to .NET 8. The application is a web interface for Rochester Institute of Technology's Information Sciences & Technologies department, providing information about degrees, faculty, and employment opportunities.
 
 ## Project Overview
 
