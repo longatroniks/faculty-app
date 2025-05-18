@@ -1,77 +1,51 @@
-﻿@using LonginKP3.Models
-@model EmploymentModel
-
-
-<!--Employment Sections-->
-<section id="employment" class="hero is-fullheight d-flex flex-column justify-content-center align-items-center my-5">
-    <div id="employment-div" class="d-flex flex-column">
-
-        <h1 class="title display-3 text-white slide-bottom my-5">Coop Table</h1>
-        <table id="coop-table" class="table table-bordered table-striped text-white">
-            <thead>
+﻿<div class="table-responsive rounded shadow">
+    <table class="table table-dark">
+        <thead class="thead-orange">
+            <tr>
+                <th>Employer</th>
+                <th>Degree</th>
+                <th>City</th>
+                <th>Term</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var info in Model.coopTable.coopInformation)
+            {
                 <tr>
-                    <th><abbr title="Employer">Employer</abbr></th>
-                    <th><abbr title="Degree">Degree</abbr></th>
-                    <th><abbr title="City">City</abbr></th>
-                    <th><abbr title="Term">Term</abbr></th>
+                    <td>@info.employer</td>
+                    <td>@info.degree</td>
+                    <td>@info.city</td>
+                    <td>@info.term</td>
                 </tr>
-            </thead>
-            <tfoot>
+            }
+        </tbody>
+    </table>
+</div>
+
+<h1 class="display-4 text-center text-white mb-5 mt-5">Professional Employment</h1>
+
+<div class="table-responsive rounded shadow">
+    <table class="table table-dark">
+        <thead class="thead-orange">
+            <tr>
+                <th>Employer</th>
+                <th>Degree</th>
+                <th>City</th>
+                <th>Title</th>
+                <th>Start Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var info in Model.employmentTable.professionalEmploymentInformation)
+            {
                 <tr>
-                    <th><abbr title="Employer">Employer</abbr></th>
-                    <th><abbr title="Degree">Degree</abbr></th>
-                    <th><abbr title="City">City</abbr></th>
-                    <th><abbr title="Term">Term</abbr></th>
+                    <td>@info.employer</td>
+                    <td>@info.degree</td>
+                    <td>@info.city</td>
+                    <td>@info.title</td>
+                    <td>@info.startDate</td>
                 </tr>
-            </tfoot>
-            <tbody id="coopTable">
-
-                @foreach (var info in Model.coopTable.coopInformation)
-                {
-                    <tr>
-                        <th><abbr title="Employer">@info.employer</abbr></th>
-                        <th><abbr title="Degree">@info.degree</abbr></th>
-                        <th><abbr title="City">@info.city</abbr></th>
-                        <th><abbr title="Term">@info.term</abbr></th>
-                    </tr>
-                }
-            </tbody>
-        </table>
-
-        <h1 class="title display-3 text-white slide-bottom my-5">Employer Table</h1>
-        <table id="employer-table" class="table table-bordered table-striped text-white">
-            <thead>
-                <tr class="text-white">
-                    <th><abbr title="Employer">Employer</abbr></th>
-                    <th><abbr title="Degree">Degree</abbr></th>
-                    <th><abbr title="City">City</abbr></th>
-                    <th><abbr title="Title">Title</abbr></th>
-                    <th><abbr title="Start Date">Start Date</abbr></th>
-
-                </tr>
-            </thead>
-            <tfoot>
-                <tr class="text-white">
-                    <th><abbr title="Employer">Employer</abbr></th>
-                    <th><abbr title="Degree">Degree</abbr></th>
-                    <th><abbr title="City">City</abbr></th>
-                    <th><abbr title="Title">Title</abbr></th>
-                    <th><abbr title="Start Date">Start Date</abbr></th>
-                </tr>
-            </tfoot>
-            <tbody id="employmentTable">
-                @foreach (var info in Model.employmentTable.professionalEmploymentInformation)
-                {
-                    <tr>
-                        <th><abbr title="Employer">@info.employer</abbr></th>
-                        <th><abbr title="Degree">@info.degree</abbr></th>
-                        <th><abbr title="City">@info.city</abbr></th>
-                        <th><abbr title="Title">@info.title</abbr></th>
-                        <th><abbr title="Start Date">@info.startDate</abbr></th>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-
-</section>
+            }
+        </tbody>
+    </table>
+</div>

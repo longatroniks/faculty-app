@@ -1,9 +1,8 @@
 ﻿@using LonginKP3.Models
 @model IndexModel
-
-<section id="aboutSection" class="hero d-flex justify-content-center align-items-center">
-    <div id="about" class="hero-body d-flex flex-column justify-content-center align-items-center">
-        <h1 class="title display-5 text-white pb-3">
+<section id="aboutSection" class="d-flex justify-content-center align-items-center">
+    <div id="about" class="d-flex flex-column justify-content-center align-items-center">
+        <h1 class="title text-white pb-3">
             @Model.title
         </h1>
         <div>
@@ -11,7 +10,20 @@
                 @Model.description
             </h3>
         </div>
-        <blockquote class="text-white w-75">"@Model.quote"<p class="pt-4 pl-4">-@Model.quoteAuthor</p></blockquote>
+        <blockquote class="text-white">
+            "@Model.quote"
+            <p>-@Model.quoteAuthor</p>
+        </blockquote>
     </div>
-
 </section>
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            // Animate the intro section elements
+            setTimeout(function () {
+                $("#about .subtitle").addClass("fade-in");
+                $("#about blockquote").addClass("fade-in");
+            }, 4000); // Start after typing animation finishes
+        });
+    </script>
+}
